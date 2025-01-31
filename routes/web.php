@@ -1,11 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('blade/{blade}', function (string $blade) {
-    return view($blade);
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');

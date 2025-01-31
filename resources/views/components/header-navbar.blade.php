@@ -4,7 +4,7 @@
             <nav class="main-nav">
                 <ul class="menu">
                     <li class="active">
-                        <a href="demo1.html">خانه</a>
+                        <a href="{{ route('home') }}">صفحه اصلی</a>
                     </li>
                     <li class="">
                         <a href="#">صفحات</a>

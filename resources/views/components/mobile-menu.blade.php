@@ -15,7 +15,7 @@
         <!-- End of Search Form -->
         <ul class="mobile-menu mmenu-anim">
             <li>
-                <a href="demo1.html">خانه</a>
+                <a href="{{ route('home') }}">صفحه اصلی</a>
             </li>
             <li>
                 <a href="#">صفحات</a>

@@ -32,10 +32,12 @@
     <link rel="stylesheet" type="text/css" href="/vendor/magnific-popup/magnific-popup.min.css">
     <link rel="stylesheet" type="text/css" href="/vendor/owl-carousel/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="/vendor/sticky-icon/stickyicon.css">
+    <link rel="stylesheet" type="text/css" href="/vendor/codemirror/codemirror.css">
     <!-- Font Vazir -->
     <link href="/fonts/vazir/font-vazir.css" rel="stylesheet" />
     <!-- Main CSS File -->
     <link rel="stylesheet" type="text/css" href="/css/demo1.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.min.css">
 </head>
 <body class="home">
     <div class="page-wrapper">
