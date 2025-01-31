@@ -1,0 +1,6 @@
+CMS (Article)
+
+User management (edit user roles, edit users (ban, edit info))
+Article management (crud operations)
+Category management (crud operations)
+Comment management (accept or reject)

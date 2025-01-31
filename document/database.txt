@@ -1,0 +1,17 @@
+**** Database ****
+
+---- tables ----
+
+users => first_name, last_name, email, password
+articles => title, body, category_id, user_id, tags, image
+categories => name
+comments => user_id, article_id, body, status (created, verified, rejected)
+
+---- relationships ----
+
+user and article => one to many
+user and comment => one to many
+article and category => one to many
+article and comment => one to many
+
+** include permission system tables and relationships
