@@ -21,11 +21,21 @@
         </div>
         <div class="header-left">
             <div class="dropdown cart-dropdown type2 off-canvas mr-0 mr-lg-2">
+                <a href="#" class="cart-toggle" onclick="return document.location.href = '/logout';">
+                    @auth
+                        <div class="cart-label d-lg-show">
+                            <span class="cart-price">خروج</span>
+                        </div>
+                        <i class="d-icon-user"></i>
+                    @endauth
+                </a>
                 <a href="#signin" class="cart-toggle login-toggle link-to-tab">
-                    <div class="cart-label d-lg-show">
-                        <span class="cart-price">ورود | ثبت نام</span>
-                    </div>
-                    <i class="d-icon-user" id="#signin"></i>
+                    @guest
+                        <div class="cart-label d-lg-show">
+                            <span class="cart-price">ورود | ثبت نام</span>
+                        </div>
+                        <i class="d-icon-user" id="#signin"></i>
+                    @endguest
                 </a>
                 <!-- End Dropdown Box -->
             </div>

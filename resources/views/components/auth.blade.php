@@ -19,84 +19,47 @@
                                         </li>
                                         <li class="delimiter">/</li>
                                         <li class="nav-item">
-                                            <a class="nav-link border-no lh-1 ls-normal" href="#register"> یا ثبت
-                                                نام</a>
+                                            <a class="nav-link border-no lh-1 ls-normal" href="#register">ثبت نام</a>
                                         </li>
                                     </ul>
+                                    <x-error-summary />
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="signin">
-                                            <form action="#">
+                                            <form action="{{ route('auth.login') }}" method="post">
+                                                @csrf
                                                 <div class="form-group mb-3">
-                                                    <input type="text" class="form-control text-left"
-                                                        id="singin-email" name="singin-email" placeholder="نام کاربری"
-                                                        required="">
+                                                    <input type="text" class="form-control text-left" name="email" placeholder="ایمیل" value="{{ old('email') }}" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="password" class="form-control text-left ltr"
-                                                        id="singin-password" name="singin-password"
-                                                        placeholder="کلمه عبور" required="">
-                                                </div>
-                                                <div class="form-footer">
-                                                    <div class="form-checkbox">
-                                                        <input type="checkbox" class="custom-checkbox"
-                                                            id="signin-remember" name="signin-remember">
-                                                        <label class="form-control-label" for="signin-remember">من را به
-                                                            خاطر بسپار</label>
-                                                    </div>
-                                                    <a href="#" class="lost-link">کلمه عبور را فراموش کرده
-                                                        اید؟</a>
+                                                    <input type="password" class="form-control text-left ltr" name="password" placeholder="کلمه عبور" required>
                                                 </div>
                                                 <button class="btn btn-dark btn-block btn-rounded" type="submit">
                                                     ورود
                                                 </button>
                                             </form>
-                                            <div class="form-choice text-center">
-                                                <label class="ls-m">یا ورود با</label>
-                                                <div class="social-links">
-                                                    <a href="#" title="social-link"
-                                                        class="social-link social-google fab fa-google border-no"></a>
-                                                    <a href="#" title="social-link"
-                                                        class="social-link social-facebook fab fa-facebook-f border-no"></a>
-                                                    <a href="#" title="social-link"
-                                                        class="social-link social-twitter fab fa-twitter border-no"></a>
-                                                </div>
-                                            </div>
                                         </div>
                                         <div class="tab-pane" id="register">
-                                            <form action="#">
+                                            <form action="{{ route('auth.register') }}" method="post">
+                                                @csrf
                                                 <div class="form-group mb-3">
-                                                    <input type="email" class="form-control text-left"
-                                                        id="register-email" name="register-email"
-                                                        placeholder="آدرس ایمیل" required="">
+                                                    <input type="text" class="form-control text-right rtl" name="first_name" placeholder="نام" value="{{ old('first_name') }}" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="password" class="form-control text-left ltr"
-                                                        id="register-password" name="register-password"
-                                                        placeholder="کلمه عبور" required="">
+                                                    <input type="text" class="form-control text-right rtl" name="last_name" placeholder="نام خانوداگی" value="{{ old('last_name') }}" required>
                                                 </div>
-                                                <div class="form-footer">
-                                                    <div class="form-checkbox">
-                                                        <input type="checkbox" class="custom-checkbox"
-                                                            id="register-agree" name="register-agree" required="">
-                                                        <label class="form-control-label" for="register-agree">قوانین
-                                                            و مقررات را می پذیرم .</label>
-                                                    </div>
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control text-right rtl" name="email" placeholder="ایمیل" value="{{ old('email') }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control text-right rtl" name="password" placeholder="رمزعبور" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control text-right rtl" name="password_confirmation" placeholder="تکرار رمزعبور" required>
                                                 </div>
                                                 <button class="btn btn-dark btn-block btn-rounded" type="submit">
                                                     ثبت نام
                                                 </button>
                                             </form>
-                                            <div class="form-choice text-center">
-                                                <label class="ls-m">یا ثبت نام با</label>
-                                                <div class="social-links">
-                                                    <a href="#" title="social-link"
-                                                        class="social-link social-google fab fa-google border-no"></a>
-                                                    <a href="#" title="social-link"
-                                                        class="social-link social-facebook fab fa-facebook-f border-no"></a>
-                                                    <a href="#" title="social-link"
-                                                        class="social-link social-twitter fab fa-twitter border-no"></a>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
