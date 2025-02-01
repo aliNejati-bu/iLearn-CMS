@@ -145,6 +145,9 @@ return [
         'type'                  => 'نوع',
         'genre'                 => 'ژانر',
         'body'                  => 'متن',
+        'current_password' => 'رمز عبور فعلی',
+        'new_password' => 'رمز عبور جدید',
+        'string' => 'فیلد :attribute باید رشته باشد'
     ],
 
 ];

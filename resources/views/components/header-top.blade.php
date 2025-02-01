@@ -21,10 +21,10 @@
         </div>
         <div class="header-left">
             <div class="dropdown cart-dropdown type2 off-canvas mr-0 mr-lg-2">
-                <a href="#" class="cart-toggle" onclick="return document.location.href = '/logout';">
+                <a href="#" class="cart-toggle" onclick="return document.location.href = '{{ route('dashboard') }}';">
                     @auth
                         <div class="cart-label d-lg-show">
-                            <span class="cart-price">خروج</span>
+                            <span class="cart-price">پنل کاربری</span>
                         </div>
                         <i class="d-icon-user"></i>
                     @endauth

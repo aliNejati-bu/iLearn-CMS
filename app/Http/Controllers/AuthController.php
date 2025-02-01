@@ -73,4 +73,9 @@ class AuthController extends Controller
             'password' => ['required', Password::defaults()],
         ]);
     }
+
+    public function dashboard()
+    {
+        return view('user.dashboard');
+    }
 }
