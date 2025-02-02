@@ -15,7 +15,7 @@ class AuthController extends Controller
 
         $user = $this->createUser($request->all());
 
-        Auth::login($user);
+        Auth::login($user, true);
 
         return redirect()->route('home')->with('success', '');
     }
@@ -76,6 +76,8 @@ class AuthController extends Controller
 
     public function dashboard()
     {
-        return view('user.dashboard');
+        $users = User::all();
+
+        return view('user.dashboard', compact('users'));
     }
 }

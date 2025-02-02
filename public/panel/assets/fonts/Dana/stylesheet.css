@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'DanaFaNum';
+    src: url('dana-fanum-bold.woff2') format('woff2'),
+        url('dana-fanum-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DanaFaNum';
+    src: url('dana-fanum-demibold.woff2') format('woff2'),
+        url('dana-fanum-demibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'DanaFaNum';
+    src: url('dana-fanum-regular.woff2') format('woff2'),
+        url('dana-fanum-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'DanaFaNum';
+    src: url('dana-bold.woff2') format('woff2'),
+        url('dana-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-family: 'DanaFaNum' !important;
+}

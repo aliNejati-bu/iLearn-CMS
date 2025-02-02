@@ -10,10 +10,12 @@
             <div class="tab tab-vertical gutter-lg">
                 <ul class="nav nav-tabs mb-4 col-lg-3 col-md-4" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link text-right {{ ((!$errors->any()) && (session()->get('dashboard') == true || (!session()->has('dashboard')))) ? 'active' : '' }}" href="#dashboard">داشبورد</a>
+                        <a class="nav-link text-right {{ !$errors->any() && (session()->get('dashboard') == true || !session()->has('dashboard')) ? 'active' : '' }}"
+                            href="#dashboard">داشبورد</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-right {{ (session()->get('tab') == 'account') ? 'active' : '' }}" href="#account">ویرایش پروفایل</a>
+                        <a class="nav-link text-right {{ session()->get('tab') == 'account' ? 'active' : '' }}"
+                            href="#account">ویرایش پروفایل</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-right" href="#"
@@ -21,7 +23,8 @@
                     </li>
                 </ul>
                 <div class="tab-content col-lg-9 col-md-8">
-                    <div class="tab-pane {{ ((!$errors->any()) && (session()->get('dashboard') == true || (!session()->has('dashboard')))) ? 'active' : '' }}" id="dashboard">
+                    <div class="tab-pane {{ !$errors->any() && (session()->get('dashboard') == true || !session()->has('dashboard')) ? 'active' : '' }}"
+                        id="dashboard">
                         <p class="mb-0">
                             سلام <span>{{ request()->user()->name }}</span> عزیز
                         </p>
@@ -35,7 +38,7 @@
                             مشاهده مطالب <i class="d-icon-arrow-left"></i>
                         </a>
                     </div>
-                    <div class="tab-pane {{ (session()->get('tab') == 'account') ? 'active' : '' }}" id="account">
+                    <div class="tab-pane {{ session()->get('tab') == 'account' ? 'active' : '' }}" id="account">
                         <form action="{{ route('profile.update') }}" class="form" method="post">
                             @csrf
                             @method('put')
