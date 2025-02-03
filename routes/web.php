@@ -1,12 +1,18 @@
 <?php
 
+use App\Http\Controllers\ArticleController as ControllersArticleController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Panel\ArticleController;
 use App\Http\Controllers\Panel\CategoryController;
+use App\Http\Controllers\Panel\CommentController as PanelCommentController;
 use App\Http\Controllers\Panel\UserController;
 use App\Http\Controllers\PanelController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Middleware\CheckIsAdmin;
+use App\Http\Middleware\CheckIsAuth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -18,7 +24,7 @@ Route::name('auth.')->middleware('guest')->group(function () {
     Route::post('login', [AuthController::class, 'login'])->name('login');
 });
 
-Route::middleware('auth')->group(function () {
+Route::middleware(CheckIsAuth::class)->group(function () {
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('dashboard', [AuthController::class, 'dashboard'])->name('dashboard');
 });
@@ -28,7 +34,7 @@ Route::middleware('auth')->name('profile.')->prefix('profile')->group(function (
     Route::get('edit', [ProfileController::class, 'edit'])->name('edit');
 });
 
-Route::prefix('management')->name('management.')->middleware('auth')->group(function () {
+Route::prefix('management')->name('management.')->middleware([CheckIsAuth::class, CheckIsAdmin::class])->group(function () {
     Route::get('/', [PanelController::class, 'index'])->name('index');
 
     Route::prefix('users')->name('users.')->group(function () {
@@ -57,6 +63,21 @@ Route::prefix('management')->name('management.')->middleware('auth')->group(func
         Route::post('', [CategoryController::class, 'store'])->name('store');
         Route::get('{category}/delete', [CategoryController::class, 'destroy'])->name('destroy');
     });
+
+    Route::prefix('comments')->name('comments.')->group(function () {
+        Route::get('', [PanelCommentController::class, 'index'])->name('index');
+        Route::get('{comment}/verify', [PanelCommentController::class, 'verify'])->name('verify');
+        Route::get('{comment}/reject', [PanelCommentController::class, 'reject'])->name('reject');
+    });
+});
+
+Route::prefix('articles')->name('articles.')->group(function () {
+    Route::get('', [ControllersArticleController::class, 'index'])->name('index');
+    Route::get('{article}', [ControllersArticleController::class, 'show'])->name('show');
+});
+
+Route::prefix('comments')->name('comments.')->middleware(CheckIsAuth::class)->group(function () {
+    Route::post('{article}', [CommentController::class, 'store'])->name('store');
 });
 
 Route::get('blade/{blade}', function (string $blade) {

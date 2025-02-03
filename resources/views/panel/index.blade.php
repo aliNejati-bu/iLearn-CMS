@@ -98,7 +98,7 @@
                                 <th class="border-0 py-2">عضویت</th>
                             </tr>
                             <tbody>
-                                @foreach (App\Models\User::all() as $user)
+                                @foreach (App\Models\User::all()->take(4) as $user)
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>

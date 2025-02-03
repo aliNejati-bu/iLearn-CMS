@@ -80,20 +80,17 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link menu-arrow" href="#sidebarMaps" data-bs-toggle="collapse" role="button"
-                    aria-expanded="false" aria-controls="sidebarMaps">
+                <a class="nav-link menu-arrow" href="#sidebarComments" data-bs-toggle="collapse" role="button"
+                    aria-expanded="false" aria-controls="sidebarComments">
                     <span class="nav-icon">
-                        <iconify-icon icon="solar:map-outline"></iconify-icon>
+                        <iconify-icon icon="iconamoon:comment"></iconify-icon>
                     </span>
-                    <span class="nav-text"> نقشه ها</span>
+                    <span class="nav-text">نظرات</span>
                 </a>
-                <div class="collapse" id="sidebarMaps">
+                <div class="collapse" id="sidebarComments">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="maps-google.html">نقشه گوگل</a>
-                        </li>
-                        <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="maps-vector.html">نقشه برداری</a>
+                            <a class="sub-nav-link" href="{{ route('management.comments.index') }}">لیست نظرات</a>
                         </li>
                     </ul>
                 </div>

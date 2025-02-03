@@ -50,7 +50,7 @@
                                 width: "120px",
                                 formatter: function(e) {
                                     return gridjs.html("<a href='/management/users/" + e +
-                                        "/edit' class='text-primary text-decoration-underline'>ویرایش</a> <a href='/management/users/" + e + "/delete' class='text-danger text-decoration-underline'>حذف</a>"
+                                        "/edit' class='btn btn-primary btn-sm w-100 mb-2'>ویرایش</a> <a href='/management/users/" + e + "/delete' class='btn btn-danger btn-sm w-100'>حذف</a>"
                                         );
                                 },
                             },

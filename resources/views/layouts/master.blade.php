@@ -49,6 +49,8 @@
         <x-header />
         <!-- End Header -->
         <main class="main rtl text-right">
+            <x-good-alert />
+            <x-bad-alert />
             @yield('main')
         </main>
         <!-- End of Main -->
@@ -65,10 +67,12 @@
     <!-- Plugins JS File -->
     <script src="/vendor/jquery/jquery.min.js"></script>
     <script src="/vendor/parallax/parallax.min.js"></script>
+    <script src="/vendor/sticky/sticky.min.js"></script>
     <script src="/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="/vendor/elevatezoom/jquery.elevatezoom.min.js"></script>
     <script src="/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
     <script src="/vendor/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/vendor/isotope/isotope.pkgd.min.js"></script>
     <!-- Main JS File -->
     <script src="/js/main.min.js"></script>
     {{-- Swal --}}

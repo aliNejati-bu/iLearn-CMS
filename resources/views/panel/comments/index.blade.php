@@ -1,6 +1,6 @@
 @extends('layouts.panel')
 
-@section('title', 'لیست پست ها')
+@section('title', 'لیست نظرات')
 
 @section('main')
     <div class="container-fluid">
@@ -15,15 +15,15 @@
     </div>
 
     <script>
-        let articles = {!! $articles->toJson() !!};
+        let comments = {!! $comments->toJson() !!};
+
+        console.log(comments);
         
         let data = [];
 
-        articles.forEach(article => {
-            data.push([article.id, article.title, article.user.first_name + ' ' + article.user.last_name, article.tags, article.id]);
+        comments.forEach(comment => {
+            data.push([comment.id, comment.user.first_name + ' ' + comment.user.last_name, comment.article.id, comment.body, comment.id]);
         });
-
-        console.log(data);
 
         class GridDatatable {
             init() {
@@ -38,33 +38,26 @@
                                     return gridjs.html('<span class="fw-semibold">' + e + "</span>");
                                 },
                             },
-                            "عنوان",
-                            "نویسنده",
+                            "کاربر",
                             {
-                                name: "برچسب ها",
-                                formatter: function(e) {
-                                    let tags = e.split(',');
-
-                                    let html = '';
-                                    tags.forEach(tag => {
-                                        html += '<button type="button" class="btn btn-light btn-sm m-1">' + tag + '</button>';
-                                    });
-
-                                    return gridjs.html(html);
-                                },
+                                name: "شماره مقاله",
+                                formatter: function (e) {
+                                    return gridjs.html('<a href="/articles/' + e + '" class="text-primary">' + e + '</a>');
+                                }
                             },
+                            "متن",
                             {
                                 name: "عملیات",
                                 width: "120px",
                                 formatter: function(e) {
-                                    return gridjs.html("<a href='/management/articles/" + e +
-                                        "/edit' class='btn btn-primary btn-sm w-100 mb-2'>ویرایش</a> <a href='/management/articles/" + e + "/delete' class='btn btn-danger btn-sm w-100'>حذف</a>"
+                                    return gridjs.html("<a href='/management/comments/" + e +
+                                        "/verify' class='btn btn-success btn-sm w-100 mb-2'>تایید</a> <a href='/management/comments/" + e + "/reject' class='btn btn-danger btn-sm w-100'>رد</a>"
                                         );
                                 },
                             },
                         ],
                         pagination: {
-                            limit: 4
+                            limit: 10
                         },
                         sort: !0,
                         search: !0,

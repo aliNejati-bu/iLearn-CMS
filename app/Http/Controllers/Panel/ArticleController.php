@@ -66,7 +66,7 @@ class ArticleController extends Controller
 
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::all()->load('user');
 
         return view('panel.articles.index', compact('articles'));
     }
