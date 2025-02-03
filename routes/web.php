@@ -80,6 +80,10 @@ Route::prefix('comments')->name('comments.')->middleware(CheckIsAuth::class)->gr
     Route::post('{article}', [CommentController::class, 'store'])->name('store');
 });
 
+Route::get('soon', function () {
+    return back()->with('good', 'به زودی این بخش اضافه خواهد شد');
+})->name('soon');
+
 Route::get('blade/{blade}', function (string $blade) {
     return view($blade);
 });

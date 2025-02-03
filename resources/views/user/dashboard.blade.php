@@ -34,7 +34,7 @@
                                 ویرایش اطلاعات کاربری من
                             </a>
                         </p>
-                        <a href="shop.html" class="btn btn-dark btn-rounded">
+                        <a href="{{ route('articles.index') }}" class="btn btn-dark btn-rounded">
                             مشاهده مطالب <i class="d-icon-arrow-left"></i>
                         </a>
                     </div>

@@ -74,6 +74,32 @@
                     </div>
                 </div>
             </div>
+            <div class="col-md-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="avatar-md bg-primary bg-opacity-10 rounded-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" class="fs-32 text-primary avatar-title">
+                                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path
+                                                d="M4.728 16.137c-1.545-1.546-2.318-2.318-2.605-3.321c-.288-1.003-.042-2.068.45-4.197l.283-1.228c.413-1.792.62-2.688 1.233-3.302s1.51-.82 3.302-1.233l1.228-.284c2.13-.491 3.194-.737 4.197-.45c1.003.288 1.775 1.061 3.32 2.606l1.83 1.83C20.657 9.248 22 10.592 22 12.262c0 1.671-1.344 3.015-4.033 5.704c-2.69 2.69-4.034 4.034-5.705 4.034c-1.67 0-3.015-1.344-5.704-4.033z" />
+                                            <circle cx="8.607" cy="8.879" r="2"
+                                                transform="rotate(-45 8.607 8.879)" />
+                                            <path stroke-linecap="round" d="m11.542 18.5l6.979-6.98" />
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="col-6 text-start">
+                                <p class="text-muted mb-0 text-truncate">دسته بندی</p>
+                                <h3 class="text-dark mt-2 mb-0">{{ App\Models\Category::all()->count() }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
@@ -98,7 +124,7 @@
                                 <th class="border-0 py-2">عضویت</th>
                             </tr>
                             <tbody>
-                                @foreach (App\Models\User::all()->take(4) as $user)
+                                @foreach (App\Models\User::latest()->get()->take(4) as $user)
                                     <tr>
                                         <td>{{ $user->id }}</td>
                                         <td>
@@ -106,7 +132,8 @@
                                         </td>
                                         <td dir="ltr">{{ $user->email }}</td>
                                         <td>
-                                            <span class="badge badge-soft-success">{{ $user->created_at->diffForHumans() }}</span>
+                                            <span
+                                                class="badge badge-soft-success">{{ $user->created_at->diffForHumans() }}</span>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -120,10 +147,10 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h4 class="card-title">سفارشات اخیر</h4>
+                            <h4 class="card-title">نظرات اخیر</h4>
 
-                            <a href="#!" class="btn btn-sm btn-primary">
-                                <i class="bx bx-plus ms-1"></i>ایجاد سفارش
+                            <a href="{{ route('management.comments.index') }}" class="btn btn-sm btn-primary">
+                                <i class="bx ms-1"></i>مدیریت نظرات
                             </a>
                         </div>
                     </div> <!-- end card body -->
@@ -131,93 +158,38 @@
                         <table class="table mb-0">
                             <thead class="bg-light bg-opacity-50">
                                 <tr>
-                                    <th class="border-0 py-2">شناسه سفارش</th>
+                                    <th class="border-0 py-2">شناسه</th>
                                     <th class="border-0 py-2">تاریخ</th>
-                                    <th class="border-0 py-2">نام مشتری</th>
-                                    <th class="border-0 py-2">شماره تلفن</th>
-                                    <th class="border-0 py-2">آدرس</th>
-                                    <th class="border-0 py-2">نوع پرداخت</th>
+                                    <th class="border-0 py-2">کاربر</th>
+                                    <th class="border-0 py-2">مقاله</th>
                                     <th class="border-0 py-2">وضعیت</th>
                                 </tr>
                             </thead> <!-- end thead-->
                             <tbody>
-                                <tr>
-                                    <td><a href="#!">#TZ5625</a></td>
-                                    <td>25 آذر 1403</td>
-                                    <td><a href="#!">محمد جواد طبری</a></td>
-                                    <td>0912345678</td>
-                                    <td>آمل،خیابان هراز،آفتاب 18</td>
-                                    <td>کارت اعتباری</td>
-                                    <td><i class="bx bxs-circle text-success ms-1"></i>تکمیل شد</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#!">#TZ9652</a></td>
-                                    <td>20 آذر 1403</td>
-                                    <td><a href="#!">رضا رضازاده</a></td>
-                                    <td>09987654321</td>
-                                    <td>آمل،خیابان هراز،آفتاب 18</td>
-                                    <td>کارت اعتباری</td>
-                                    <td><i class="bx bxs-circle text-success ms-1"></i>تکمیل شد</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#!">#TZ5984</a></td>
-                                    <td>20 آذر 1403</td>
-                                    <td><a href="#!">سارا حسینی</a></td>
-                                    <td>09543219876</td>
-                                    <td>آمل،خیابان هراز،آفتاب 18</td>
-                                    <td>Pay Pal</td>
-                                    <td><i class="bx bxs-circle text-success ms-1"></i>تکمیل شد</td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#!">#TZ3625</a></td>
-                                    <td>5 آبان 1403</td>
-                                    <td><a href="#!">جواد رجبی</a></td>
-                                    <td>09567891234</td>
-                                    <td>آمل،خیابان هراز،آفتاب 18</td>
-                                    <td>Pay Pal</td>
-                                    <td><i class="bx bxs-circle text-primary ms-1"></i>در حال پردازش
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#!">#TZ8652</a></td>
-                                    <td>2 مهر 1403</td>
-                                    <td><a href="#!">علی اکبر نبی زاده</a></td>
-                                    <td>09929982850</td>
-                                    <td>آمل،خیابان هراز،آفتاب 18</td>
-                                    <td>کارت اعتباری</td>
-                                    <td><i class="bx bxs-circle text-primary ms-1"></i>در حال پردازش
-                                    </td>
-                                </tr>
+                                @foreach (App\Models\Comment::latest()->get()->take(4) as $comment)
+                                    <tr>
+                                        <td>{{ $comment->id }}</td>
+                                        <td>{{ $comment->created_at->diffForHumans() }}</td>
+                                        <td>{{ $comment->user->name }}</td>
+                                        <td><a
+                                                href="{{ route('articles.show', $comment->article->id) }}">{{ $comment->article->id }}</a>
+                                        </td>
+                                        <td>
+                                            @if ($comment->status == 'created')
+                                                <i class="bx bxs-circle text-warning ms-1"></i>در انتظار
+                                            @endif
+                                            @if ($comment->status == 'verified')
+                                                <i class="bx bxs-circle text-success ms-1"></i>تایید شده
+                                            @endif
+                                            @if ($comment->status == 'rejected')
+                                                <i class="bx bxs-circle text-danger ms-1"></i>رد شده
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody> <!-- end tbody -->
                         </table> <!-- end table -->
                     </div> <!-- table responsive -->
-                    <div
-                        class="align-items-center justify-content-between row g-0 text-center text-sm-start p-3 border-top">
-                        <div class="col-sm">
-                            <div class="text-muted">
-                                نمایش <span class="fw-semibold">5</span> از <span class="fw-semibold">90521</span> سفارشات
-                            </div>
-                        </div>
-                        <div class="col-sm-auto mt-3 mt-sm-0">
-                            <ul class="pagination pagination-rounded m-0">
-                                <li class="page-item">
-                                    <a href="#" class="page-link"><i class='bx bx-right-arrow-alt'></i></a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link"><i class='bx bx-left-arrow-alt'></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div> <!-- end card -->
             </div> <!-- end col -->
         </div> <!-- end row -->

@@ -1,12 +1,12 @@
 <div class="app-sidebar">
     <!-- Sidebar Logo -->
     <div class="logo-box">
-        <a href="index-2.html" class="logo-dark">
+        <a href="{{ route('home') }}" class="logo-dark">
             <img src="/images/ilearn.png" class="logo-sm" alt="logo sm">
             <img src="/images/ilearn.png" class="logo-lg" alt="logo dark">
         </a>
 
-        <a href="index-2.html" class="logo-light">
+        <a href="{{ route('home') }}" class="logo-light">
             <img src="/images/ilearn.png" class="logo-sm" alt="logo sm">
             <img src="/images/ilearn.png" class="logo-lg" alt="logo light">
         </a>

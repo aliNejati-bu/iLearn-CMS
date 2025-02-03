@@ -27,19 +27,10 @@
                         <h4 class="widget-title">صفحات وبسایت</h4>
                         <ul class="widget-body ">
                             <li>
-                                <a href="#">ورود یا ثبت نام</a>
+                                <a href="{{ route('home') }}">خانه</a>
                             </li>
                             <li>
-                                <a href="cart.html">سبد خرید</a>
-                            </li>
-                            <li>
-                                <a href="wishlist.html">لیست علاقمندی</a>
-                            </li>
-                            <li>
-                                <a href="#">پیگیری سفارش</a>
-                            </li>
-                            <li>
-                                <a href="#">راهنمای خرید</a>
+                                <a href="{{ route('articles.index') }}">مقالات</a>
                             </li>
                         </ul>
                     </div>

@@ -4,7 +4,7 @@
             <a href="#" class="mobile-menu-toggle">
                 <i class="d-icon-bars2"></i>
             </a>
-            <a href="demo1.html" class="logo">
+            <a href="{{ route('home') }}" class="logo">
                 <img src="/images/ilearn.png" alt="logo" width="153" height="44" />
             </a>
             <!-- End Logo -->

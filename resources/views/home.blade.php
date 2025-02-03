@@ -30,7 +30,7 @@
                                 data-animation-options="{'name': 'fadeInUp', 'duration': '1s', 'delay': '.8s'}">
                                 مطالب آموزنده توسط نویسنده های باتجربه
                             </p>
-                            <a href="shop.html" class="btn btn-light btn-rounded slide-animate mb-1"
+                            <a href="{{ route('articles.index') }}" class="btn btn-light btn-rounded slide-animate mb-1"
                                 data-animation-options="{'name': 'fadeInLeft', 'duration': '1s', 'delay': '1.5s'}">
                                 مشاهده مطالب<i class="d-icon-arrow-left"></i>
                             </a>
@@ -42,75 +42,6 @@
         <section class="pt-10 mt-7 appear-animate" data-animation-options="{
             'delay': '.3s'
         }">
-            <section class="mb-10">
-                <div class="container">
-                    <h2 class="title title-center mb-5">چه مطالبی دوست دارید؟</h2>
-                    <div class="row">
-                        <div class="col-xs-6 col-lg-3 mb-4">
-                            <div class="category category-default1 category-absolute banner-radius overlay-zoom">
-                                <a href="shop.html">
-                                    <figure class="category-media">
-                                        <img src="images/categories/category1.jpg" alt="category" width="280"
-                                            height="280" style="background-color: #8c8c8d;" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name font-weight-bold "><a href="shop.html">پوشاک آقایان</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-lg-3 mb-4">
-                            <div class="category category-default1 category-absolute banner-radius overlay-zoom">
-                                <a href="shop.html">
-                                    <figure class="category-media">
-                                        <img src="images/categories/category2.jpg" alt="category" width="280"
-                                            height="280" style="background-color: #bcbdb7;" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name font-weight-bold ">
-                                        <a href="shop.html">اکسسوری</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-lg-3 mb-4">
-                            <div class="category category-default1 category-absolute banner-radius overlay-zoom">
-                                <a href="shop.html">
-                                    <figure class="category-media">
-                                        <img src="images/categories/category3.jpg" alt="category" width="280"
-                                            height="280" style="background-color: #ececef;" />
-                                    </figure>
-                                </a>
-                                <div class="category-content rtl">
-                                    <h4 class="category-name font-weight-bold "><a href="shop.html">پوشاک بانوان</a></h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 col-lg-3 mb-4">
-                            <div class="category category-default1 category-absolute banner-radius overlay-zoom">
-                                <a href="shop.html">
-                                    <figure class="category-media">
-                                        <img src="images/categories/category4.jpg" alt="category" width="280"
-                                            height="280" style="background-color: #e8eded;" />
-                                    </figure>
-                                </a>
-                                <div class="category-content font-weight-bold">
-                                    <h4 class="category-name font-weight-bold ">
-                                        <a href="shop.html">لوازم آرایشی</a>
-                                    </h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container w-100 d-flex justify-content-center">
-                    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-                        <a href="#" class="btn btn-block btn-icon-right btn-slide-down btn-sm"><i
-                                class="d-icon-arrow-down"></i><span>مشاهده بیشتر</span></a>
-                    </div>
-                </div>
-            </section>
             <section class="banner banner-background parallax text-center" data-option="{'offset': -60}"
                 data-image-src="images/demos/demo1/parallax.jpg" style="background-color: #2d2f33;">
                 <div class="container rtl">
@@ -122,30 +53,9 @@
                         </h4>
                         <h3 class="banner-title font-weight-bold text-white">دوست دارید نویسنده باشید؟</h3>
                         <p class="text-white ls-s">علم خود را با مطالب آیلرن با بقیه به اشتراک بگذارید</p>
-                        <a href="shop.html" class="btn btn-primary btn-rounded btn-icon-right ">
+                        <a href="{{ route('soon') }}" class="btn btn-primary btn-rounded btn-icon-right ">
                             ارسال درخواست<i class="d-icon-arrow-left"></i>
                         </a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="container mt-10 pt-3">
-                    <h2 class="title title-center mb-4">نویسندگان ما</h2>
-                    <div class="code-template">
-                        <div class="row cols-sm-2 cols-md-4 code-content">
-                            <div class="image-box appear-animate"
-                                data-animation-options="{'name': 'fadeInLeftShorter', 'delay': '.3s'}">
-                                <figure class="banner-radius">
-                                    <img src="images/subpages/team2.jpg" alt="team image-box" width="280"
-                                        height="280" style="background-color: #121A1F;">
-                                    <div class="overlay social-links">
-                                        <p class="fs-4">۱۴۰ مطلب نشر شده</p>
-                                    </div>
-                                </figure>
-                                <h4 class="image-box-name">افسون هاشمی</h4>
-                                <h5 class="image-box-job">مدیر پشتیبانی / موسس</h5>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -173,96 +83,35 @@
                         }
                     }
                 }">
-                        <div class="blog-post mb-4">
-                            <article class="post post-frame overlay-zoom">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="images/blog/frame/1.jpg" alt="Blog post" width="340" height="206"
-                                            style="background-color: #919fbc;" />
-                                    </a>
-                                    <div class="post-calendar">
-                                        <span class="post-day">19</span>
-                                        <span class="post-month">اسفند</span>
-                                    </div>
-                                </figure>
-                                <div class="post-details ">
-                                    <h4 class="post-title">
-                                        <a href="post-single.html">
-                                            نحوه انتخاب لباس مناسب میهمانی
+                        @foreach (App\Models\Article::latest()->get()->take(3) as $article)
+                            <div class="blog-post mb-4">
+                                <article class="post post-frame overlay-zoom">
+                                    <figure class="post-media" style="height: 20rem;">
+                                        <a href="{{ route('articles.show', $article->id) }}">
+                                            <img src="{{ '/storage/' . $article->image }}" style="background-color: #e5e6e6; height: 100%; object-fit: cover;" />
                                         </a>
-                                    </h4>
-                                    <p class="post-content">
-                                        بسیار خوب که این محصول را انتخاب کردم! کیفیت بسیار بالا و قابل توجه است. بسته‌بندی
-                                        محکم
-                                        و ارسال سریع نیز از دقت و حرفه‌ای بودن شما خبر می‌دهد....
-                                    </p>
-                                    <a href="post-single.html" class="btn btn-primary btn-link btn-underline">
-                                        بیشتر
-                                        <i class="d-icon-arrow-left"></i>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="blog-post mb-4">
-                            <article class="post post-frame overlay-zoom">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="images/blog/frame/2.jpg" alt="Blog post" width="340" height="206"
-                                            style="background-color: #e5e6e6;" />
-                                    </a>
-                                    <div class="post-calendar">
-                                        <span class="post-day">12</span>
-                                        <span class="post-month">مهر</span>
-                                    </div>
-                                </figure>
-                                <div class="post-details ">
-                                    <h4 class="post-title">
-                                        <a href="post-single.html">
-                                            کنار کت جین چه چیزهایی می شود ست کرد
+                                        <div class="post-calendar">
+                                            <span class="post-day">{{ $article->created_at->day }}</span>
+                                            <span class="post-month">{{ $article->created_at->monthName }}</span>
+                                        </div>
+                                    </figure>
+                                    <div class="post-details ">
+                                        <h4 class="post-title">
+                                            <a href="{{ route('articles.show', $article->id) }}">
+                                                {{ $article->title }}
+                                            </a>
+                                        </h4>
+                                        <p class="post-content">
+                                            {!! strip_tags($article->body) !!}
+                                        </p>
+                                        <a href="{{ route('articles.show', $article->id) }}" class="btn btn-primary btn-link btn-underline">
+                                            بیشتر
+                                            <i class="d-icon-arrow-left"></i>
                                         </a>
-                                    </h4>
-                                    <p class="post-content">
-                                        بسیار خوب که این محصول را انتخاب کردم! کیفیت بسیار بالا و قابل توجه است. بسته‌بندی
-                                        محکم
-                                        و ارسال سریع نیز از دقت و حرفه‌ای بودن شما خبر می‌دهد....
-                                    </p>
-                                    <a href="post-single.html" class="btn btn-primary btn-link btn-underline">
-                                        بیشتر
-                                        <i class="d-icon-arrow-left"></i>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
-                        <div class="blog-post mb-4">
-                            <article class="post post-frame overlay-zoom">
-                                <figure class="post-media">
-                                    <a href="post-single.html">
-                                        <img src="images/blog/frame/3.jpg" alt="Blog post" width="340" height="206"
-                                            style="background-color: #eaeef1;" />
-                                    </a>
-                                    <div class="post-calendar">
-                                        <span class="post-day">19</span>
-                                        <span class="post-month">آبان</span>
                                     </div>
-                                </figure>
-                                <div class="post-details ">
-                                    <h4 class="post-title">
-                                        <a href="post-single.html">
-                                            ویژگی های یک بوت زنانه مناسب
-                                        </a>
-                                    </h4>
-                                    <p class="post-content">
-                                        بسیار خوب که این محصول را انتخاب کردم! کیفیت بسیار بالا و قابل توجه است. بسته‌بندی
-                                        محکم
-                                        و ارسال سریع نیز از دقت و حرفه‌ای بودن شما خبر می‌دهد....
-                                    </p>
-                                    <a href="post-single.html" class="btn btn-primary btn-link btn-underline">
-                                        بیشتر
-                                        <i class="d-icon-arrow-left"></i>
-                                    </a>
-                                </div>
-                            </article>
-                        </div>
+                                </article>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </section>
