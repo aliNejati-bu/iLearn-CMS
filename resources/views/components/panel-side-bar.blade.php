@@ -54,7 +54,7 @@
                 <div class="collapse" id="sidebarArticles">
                     <ul class="nav sub-navbar-nav">
                         <li class="sub-nav-item">
-                            <a class="sub-nav-link" href="#">لیست پست ها</a>
+                            <a class="sub-nav-link" href="{{ route('management.articles.index') }}">لیست پست ها</a>
                             <a class="sub-nav-link" href="{{ route('management.articles.create') }}">افزودن پست</a>
                         </li>
                     </ul>

@@ -1,15 +1,10 @@
 @extends('layouts.panel')
 
-@section('title', 'لیست کاربران')
+@section('title', 'لیست پست ها')
 
 @section('main')
     <div class="container-fluid">
         <div class="card">
-            <div class="card-header">
-                <h5 class="card-title">پایه</h5>
-                <p class="card-subtitle">اصلی ترین گروه فهرست، یک لیست نامرتب با موارد فهرست و
-                    کلاس های مناسب با گزینه های بعدی یا در صورت نیاز با CSS خود بر روی آن بسازید.
-                </p>
             </div>
             <div class="card-body">
                 <div>
@@ -20,12 +15,12 @@
     </div>
 
     <script>
-        let users = JSON.parse('{!! $users !!}');
-
+        let articles = {!! (new App\Http\Resources\ArticleCollection($articles))->toJson() !!};
+        
         let data = [];
 
-        users.forEach(user => {
-            data.push([user.id, user.first_name + ' ' + user.last_name, user.email, user.created_at, user.id]);
+        articles.forEach(article => {
+            data.push([article.id, article.title, article.user.name, article.tags, article.id]);
         });
 
         console.log(data);
@@ -43,20 +38,27 @@
                                     return gridjs.html('<span class="fw-semibold">' + e + "</span>");
                                 },
                             },
-                            "نام",
+                            "عنوان",
+                            "نویسنده",
                             {
-                                name: "ایمیل",
+                                name: "برچسب ها",
                                 formatter: function(e) {
-                                    return gridjs.html('<a href="#">' + e + "</a>");
+                                    let tags = e.split(',');
+
+                                    let html = '';
+                                    tags.forEach(tag => {
+                                        html += '<button type="button" class="btn btn-light btn-sm m-1">' + tag + '</button>';
+                                    });
+
+                                    return gridjs.html(html);
                                 },
                             },
-                            "تاریخ عضویت",
                             {
                                 name: "عملیات",
                                 width: "120px",
                                 formatter: function(e) {
-                                    return gridjs.html("<a href='/management/users/" + e +
-                                        "/edit' class='text-primary text-decoration-underline'>ویرایش</a> <a href='/management/users/" + e + "/delete' class='text-danger text-decoration-underline'>حذف</a>"
+                                    return gridjs.html("<a href='/management/articles/" + e +
+                                        "/edit' class='text-primary text-decoration-underline'>ویرایش</a> <a href='/management/articles/" + e + "/delete' class='text-danger text-decoration-underline'>حذف</a>"
                                         );
                                 },
                             },

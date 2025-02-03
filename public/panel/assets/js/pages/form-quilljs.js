@@ -21,6 +21,6 @@ var quill = new Quill("#snow-editor", {
             indent: "+1"
         }], ["direction", {
             align: []
-        }], ["link", "image"]]
+        }], ["link"]]
     }
 });

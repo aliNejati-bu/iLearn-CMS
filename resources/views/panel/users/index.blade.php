@@ -14,7 +14,7 @@
     </div>
 
     <script>
-        let users = JSON.parse('{!! $users !!}');
+        let users = {!! $users->toJson() !!};
 
         let data = [];
 

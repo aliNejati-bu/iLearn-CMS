@@ -41,8 +41,12 @@ Route::prefix('management')->name('management.')->middleware('auth')->group(func
     });
 
     Route::prefix('articles')->name('articles.')->group(function () {
+        Route::get('', [ArticleController::class, 'index'])->name('index');
+        Route::get('{article}/edit', [ArticleController::class, 'edit'])->name('edit');
+        Route::put('{article}', [ArticleController::class, 'update'])->name('update');
         Route::get('create', [ArticleController::class, 'create'])->name('create');
         Route::post('', [ArticleController::class, 'store'])->name('store');
+        Route::get('{article}/delete', [ArticleController::class, 'destroy'])->name('destroy');
     });
 
     Route::prefix('categories')->name('categories.')->group(function () {

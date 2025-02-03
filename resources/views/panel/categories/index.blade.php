@@ -14,7 +14,7 @@
     </div>
 
     <script>
-        let categories = JSON.parse('{!! $categories !!}');
+        let categories = {!! $categories->toJson() !!};
 
         let data = [];
 
