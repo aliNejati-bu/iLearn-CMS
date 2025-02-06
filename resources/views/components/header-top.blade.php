@@ -9,8 +9,8 @@
             </a>
             <!-- End Logo -->
             <div class="header-search hs-simple">
-                <form action="#" class="input-wrapper">
-                    <input type="text" class="form-control" name="search" autocomplete="off" placeholder="جستجو ..."
+                <form action="{{ route('articles.index') }}" class="input-wrapper">
+                    <input type="text" class="form-control" name="q" autocomplete="off" placeholder="جستجو ..." value="{{ request()->input('q') }}"
                         required />
                     <button class="btn btn-search" type="submit" title="submit-button">
                         <i class="d-icon-search"></i>

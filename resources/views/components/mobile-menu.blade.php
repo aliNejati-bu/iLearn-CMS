@@ -5,8 +5,8 @@
     <a class="mobile-menu-close" href="#"><i class="d-icon-times"></i></a>
     <!-- End of CloseButton -->
     <div class="mobile-menu-container scrollable">
-        <form action="#" class="input-wrapper">
-            <input type="text" class="form-control" name="search" autocomplete="off" placeholder="جستجو ..."
+        <form action="{{ route('articles.index') }}" class="input-wrapper">
+            <input type="text" class="form-control" name="q" autocomplete="off" placeholder="جستجو ..." value="{{ request()->get('q') }}"
                 required />
             <button class="btn btn-search" type="submit" title="submit-button">
                 <i class="d-icon-search"></i>
@@ -18,16 +18,7 @@
                 <a href="{{ route('home') }}">صفحه اصلی</a>
             </li>
             <li>
-                <a href="#">صفحات</a>
-                <ul>
-                    <li><a href="about-us.html">تست</a></li>
-                    <li>
-                        <a href="error-404.html">خطای 404</a>
-                        <ul>
-                            <li><a href="error-404-3.html">خطای 404-4</a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <a href="{{ route('articles.index') }}">مقالات</a>
             </li>
         </ul>
         <!-- End of MobileMenu -->

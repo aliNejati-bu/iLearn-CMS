@@ -27,4 +27,13 @@ class Article extends Model
     {
         return explode(',', $this->tags);
     }
+
+    public function scopeSearch($builder)
+    {
+        if (request()->has('q')) {
+            $builder->where('title', 'like', '%' . request()->input('q') . '%');
+        }
+
+        return $builder;
+    }
 }

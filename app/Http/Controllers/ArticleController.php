@@ -10,7 +10,7 @@ class ArticleController extends Controller
 {
     public function index()
     {
-        $articles = Article::paginate(6);
+        $articles = Article::search()->paginate(6);
         $categories = Category::all();
 
         return view('articles.index', compact('articles', 'categories'));
