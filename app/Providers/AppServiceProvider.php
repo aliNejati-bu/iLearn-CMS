@@ -23,14 +23,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $roles = Role::all();
+        if (Schema::hasTable('roles')) {
+            $roles = Role::all();
 
-        foreach ($roles as $role) {
-            Gate::define('is_' . $role->name, function (User $user) use ($role) {
-                return $user->hasRole($role);
-            });
+            foreach ($roles as $role) {
+                Gate::define('is_' . $role->name, function (User $user) use ($role) {
+                    return $user->hasRole($role);
+                });
+            }
+
+            Paginator::useBootstrapFive();
         }
-
-        Paginator::useBootstrapFive();
     }
 }
